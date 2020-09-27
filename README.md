@@ -1,10 +1,10 @@
-# Assignment 5
+# Assignment 6
 
-Implement Load/Store instructions
+ImplementBranch instructions
 
 ## Goals
 
-- Implement all the instructions in the RISC-V RV32I ISA that correspond to Load/Store (memory) operations.
+- Implement all the instructions in the RISC-V RV32I ISA that correspond to branch operations.
 
 ## Given
 
@@ -16,7 +16,7 @@ Implement Load/Store instructions
 
 ## Details on the assignment
 
-You need to implement code for the `cpu` module, that will read in the instructions and execute them.  For assignment 5 (Load/Store) you can assume that the program counter (PC) always increments by 4 on each clock cycle.  For the assignment involving branching, this cannot be assumed and you will have to implement the proper changes in PC.
+You need to implement code for the `cpu` module, that will read in the instructions and execute them.  For assignment 6 (branch) you can assume that the program counter (PC) always increments by 4 on each clock cycle.  For the assignment involving branching, this cannot be assumed and you will have to implement the proper changes in PC.
 
 ### Test cases
 
@@ -45,4 +45,4 @@ Once you have confirmed that your code passes all the tests, commit all the chan
 
 ## Date
 
-Due Midnight, Oct 8, 2020
+Due Midnight, (Will be upated), 2020
