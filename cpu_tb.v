@@ -64,7 +64,8 @@ module cpu_tb ();
         
         fail = 0;
         // Dump top dmem
-        for (i=0; i<32; i=i+1) begin
+        // Checking only for reg x10 for now. Will add all expected output soon.
+        for (i=10; i<11; i=i+1) begin
             s = $fscanf(exp_file, "%d\n", exp_reg);
             dtmp = {u3.mem3[i], u3.mem2[i], u3.mem1[i], u3.mem0[i]};
             if(exp_reg != dtmp) begin
@@ -72,6 +73,7 @@ module cpu_tb ();
                 fail = fail + 1;
             end 
         end
+
         if(fail != 0) begin
             $display("FAILED. %d registers do not match.\n", fail);
             $fwrite(log_file, "FAIL\n");

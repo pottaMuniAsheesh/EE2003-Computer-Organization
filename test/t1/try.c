@@ -1,21 +1,21 @@
 #include <stdio.h>
 
 void red(int *);
+
 int main()
 {
 	int i = 3;
 	while(i > 1)
 	{
 		red(&i);
-		printf("%d",i);
 	}
 	if(i != 1)
 	{
-		return 1;
+		return 0;
 	}
 	else
 	{
-		return 0;
+		return 314;
 	}
 }
 void red(int *i)
