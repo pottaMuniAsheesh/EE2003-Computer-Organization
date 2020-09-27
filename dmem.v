@@ -18,10 +18,10 @@ module dmem (
     
 
     initial begin 
-        $readmemh(`DMEM_N_FILE(`DMEMFILE, "0"), mem0); 
-        $readmemh(`DMEM_N_FILE(`DMEMFILE, "1"), mem1); 
-        $readmemh(`DMEM_N_FILE(`DMEMFILE, "2"), mem2); 
-        $readmemh(`DMEM_N_FILE(`DMEMFILE, "3"), mem3); 
+        $readmemh({`TESTDIR,"/data0.mem"}, mem0); 
+        $readmemh({`TESTDIR,"/data1.mem"}, mem1); 
+        $readmemh({`TESTDIR,"/data2.mem"}, mem2); 
+        $readmemh({`TESTDIR,"/data3.mem"}, mem3); 
     end
 
     assign a = daddr[31:2];
