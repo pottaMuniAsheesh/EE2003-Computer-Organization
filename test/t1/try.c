@@ -1,24 +1,27 @@
 #include <stdio.h>
 
-void red(int *);
+int red(int);
 
 int main()
 {
 	int i = 3;
 	while(i > 1)
 	{
-		red(&i);
+		i = red(i);
 	}
 	if(i != 1)
 	{
-		return 0;
+		return 1;
 	}
 	else
 	{
 		return 314;
 	}
+	return 0;
 }
-void red(int *i)
+
+int red(int i)
 {
-	 *i = *i - 1;
+	 return i-1;
 }
+
