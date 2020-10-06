@@ -34,8 +34,10 @@ fff78793
 00078513
 01c12403
 02010113
-00008067
+//Last line is commented to prevent the program from looping
+//00008067
 //End of actual program. What follows is to make it easy to check your register values
+00
 00
 00
 00
