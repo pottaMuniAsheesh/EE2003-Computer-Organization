@@ -24,7 +24,10 @@ fec42703
 01c12083
 01812403
 02010113
-00008067
+//Last line of main is changed to prevent the program from looping
+//We instead jump to the instructions after <red>
+//00008067
+08c00067
 fe010113
 00812e23
 02010413
@@ -34,8 +37,7 @@ fff78793
 00078513
 01c12403
 02010113
-//Last line is commented to prevent the program from looping
-//00008067
+00008067
 //End of actual program. What follows is to make it easy to check your register values
 00
 00
@@ -81,7 +83,6 @@ fff78793
 07d02a23
 07e02c23
 07f02e23
-00
 00
 00
 00
