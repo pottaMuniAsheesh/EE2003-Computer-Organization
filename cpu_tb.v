@@ -67,7 +67,7 @@ module cpu_tb ();
         for (i=0; i<32; i=i+1) begin
             s = $fscanf(exp_file, "%d\n", exp_reg);
             dtmp = {u3.mem3[i], u3.mem2[i], u3.mem1[i], u3.mem0[i]};
-            if(exp_reg != dtmp) begin
+            if(exp_reg !== dtmp) begin
                 $display("FAIL: Expected Reg[%d] = %x vs. Got Reg[%d] = %x", i, $signed(exp_reg), i, dtmp);
                 fail = fail + 1;
             end 
