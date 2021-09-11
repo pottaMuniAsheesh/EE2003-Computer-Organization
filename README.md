@@ -1,14 +1,16 @@
-# Assignment 6
+# Assignment 4
 
-ImplementBranch instructions
+Implement Branch instructions
 
 ## Goals
 
-- Implement all the instructions in the RISC-V RV32I ISA that correspond to branch operations.
+- Implement all instructions of the RV32I set to make a single cycle CPU.
 
 ## Given
 
-- Test bench with test cases having Load/Store along with ALU operations
+The goal of the single cycle CPU is to implement all instructions (except `FENCE`, `ECALL` and `EBREAK`) in the RV32I instruction set (pg. 130 of riscv-spec.pdf uploaded on Moodle).  For this, we will assume a simplified memory model, where data and instruction memory can be read in a single cycle (provide the address, and the memory responds with data in the same cycle), while allowing write at the next edge of the clock.  You are already provided with memory modules that behave as required, along with the following:
+
+- Test bench with test cases including BRANCH instructions
     - Test bench will feed one input instruction per clock cycle
     - All registers are assumed initialized to 0 - this should be done in your code
 - IMEM and DMEM are given as modules in the test bench.  You should not change them, but have to follow the read/write timing patterns from them.
@@ -16,7 +18,7 @@ ImplementBranch instructions
 
 ## Details on the assignment
 
-You need to implement code for the `cpu` module, that will read in the instructions and execute them.  For assignment 6 (branch) you can assume that the program counter (PC) always increments by 4 on each clock cycle.  For the assignment involving branching, this cannot be assumed and you will have to implement the proper changes in PC.
+You need to implement code for the `cpu` module, that will read in the instructions and execute them.  For this assignment, all functionality should be correct, so that the PC cannot be assumed to increment automatically by 4, and should be implemented correctly as per BRANCH instructions.
 
 ### Test cases
 
@@ -31,11 +33,11 @@ $ riscv32-unknown-elf-objdump -d -Mnumeric,no-aliases dump.o
 
 ### Grading
 
-Assignment 5 (Load/Store) and 6 (Branch) use the same test bench, and only differ in the test cases.  Therefore if you submit the same code for both that is perfectly fine.  However, if you have trouble implementing branching, you are advised to ensure that the Load/Store is correctly implemented so you get full credit for A5.
+This and the previous assignment (ALU + L/S) use the same test setup.  Therefore if you submit the same code for both that is perfectly fine.  However, if you have trouble implementing branching, you are advised to ensure that the Load/Store is correctly implemented so you get full credit for A3 before proceeding to A4.
 
 ## HowTo
 
-Fork this repostiry (`EE2003/a5`) into your namespace so that you can edit and push changes.
+Fork this repostiry (`EE2003-2021/a4`) into your namespace so that you can edit and push changes.
 
 The `run.sh` script performs all the steps required to compile and test your code.  The `iverilog` compiler is used for running the verilog simulations.
 
@@ -45,4 +47,4 @@ Once you have confirmed that your code passes all the tests, commit all the chan
 
 ## Date
 
-Due Midnight, (Will be upated), 2020
+Due Midnight, Sep 30, 2021
