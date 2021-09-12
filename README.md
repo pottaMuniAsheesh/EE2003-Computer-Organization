@@ -18,7 +18,7 @@ The goal of the single cycle CPU is to implement all instructions (except `FENCE
 
 ## Details on the assignment
 
-You need to implement code for the `cpu` module, that will read in the instructions and execute them.  For this assignment, all functionality should be correct, so that the PC cannot be assumed to increment automatically by 4, and should be implemented correctly as per BRANCH instructions.
+You need to implement code for the `cpu` module, that will read in the instructions and execute them. For this assignment, all functionality should be correct, so that the PC cannot be assumed to increment automatically by 4, and should be implemented correctly as per BRANCH instructions.
 
 ### Test cases
 
