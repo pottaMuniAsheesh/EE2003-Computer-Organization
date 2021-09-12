@@ -37,7 +37,7 @@ This and the previous assignment (ALU + L/S) use the same test setup.  Therefore
 
 ## HowTo
 
-Fork this repostiry (`EE2003-2021/a4`) into your namespace so that you can edit and push changes.
+Fork this repository (`EE2003-2021/a4`) into your namespace so that you can edit and push changes.
 
 The `run.sh` script performs all the steps required to compile and test your code.  The `iverilog` compiler is used for running the verilog simulations.
 
