@@ -16,9 +16,9 @@ module cpu (
     always @(posedge clk) begin
         if (reset) begin
             iaddr <= 0;
-            daddr <= 0;
-            dwdata <= 0;
-            dwe <= 0;
+            // daddr <= 0;
+            // dwdata <= 0;
+            // dwe <= 0;
         end else begin 
             iaddr <= next_iaddr; // next iaddr selected from next_iaddr_mux.
         end
@@ -57,6 +57,11 @@ module cpu (
             dwdata = dmem_wdata;
             dwe = dmem_we;
             daddr = alu_res;
+        end
+        else begin
+            dwdata = 0;
+            dwe = 0;
+            daddr = 0;
         end
     end
 
@@ -183,8 +188,11 @@ module regfile(
                 registers[i] <= 0;
             end
         end
-        if(regwrite && !reset) begin
+        else if(regwrite && !reset) begin
             registers[rdaddr] <= (rdaddr == 5'b0) ? 32'b0 : writedata;
+        end
+        else begin
+            registers[rdaddr] <= registers[rdaddr];
         end
     end
 
@@ -238,6 +246,7 @@ module alu(
             4'b1101: result = $signed(in1) >>> in2[4:0];
             4'b0110: result = in1 | in2;
             4'b0111: result = in1 & in2;
+            default: result = 0;
 
         endcase
     end
@@ -333,6 +342,9 @@ module mem_interface (
                 default: regfile_wdata = dmem_rdata;
             endcase
 
+        end
+        else begin
+            regfile_wdata = 32'b0;
         end
     end
     
